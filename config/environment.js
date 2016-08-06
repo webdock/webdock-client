@@ -16,7 +16,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    apiEndpoint: 'http://127.0.0.1:3000',
+    apiEndpoint: 'http://127.0.0.1:3000/api',
   };
 
   if (environment === 'development') {
