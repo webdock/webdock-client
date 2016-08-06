@@ -5,3 +5,7 @@
     airbnb-base
   parser: babel-eslint
   root: true
+  rules:
+    comma-dangle:
+      - 2
+      - always-multiline
