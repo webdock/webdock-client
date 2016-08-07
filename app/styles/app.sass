@@ -8,3 +8,23 @@ body
 table
   th
     text-align: left
+
+.btn, button
+  color: white
+  background-color: black
+  padding: 9px 22px
+  border: none
+  cursor: pointer
+  transition: background-color ease .1s
+
+  &:hover
+    background-color: lighten(black, 33%)
+
+  &:active
+    background-color: black
+
+input[type='text'], input[type='password']
+  border: none
+  border-bottom: 1px solid black
+  padding: 4px 10px
+  margin: 5px 0px
