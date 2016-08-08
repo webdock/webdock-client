@@ -19,6 +19,15 @@ module.exports = function(environment) {
     apiEndpoint: 'http://127.0.0.1:3000/api',
   };
 
+  ENV['ember-simple-auth'] = {
+    authorizer: 'authorizer:token'
+  };
+
+  ENV['ember-simple-auth-token'] = {
+    serverTokenEndpoint: ENV.apiEndpoint + '/authenticate',
+    identificationField: 'email',
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
