@@ -1,1 +1,10 @@
-{{yield}}
+<table>
+  <tr>
+    <th>Container</th>
+  </tr>
+  {{#each dockerContainers as |dockerContainer|}}
+  <tr>
+    <td>{{dockerContainer}}</td>
+  </tr>
+  {{/each}}
+</table>
