@@ -13,6 +13,8 @@ export default function (name, options = {}) {
       if (options.beforeEach) {
         return options.beforeEach.apply(this, args);
       }
+
+      return undefined;
     },
 
     afterEach(...args) {
