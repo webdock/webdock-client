@@ -7,7 +7,7 @@
   </tr>
   {{#each dockerImages as |dockerImage|}}
   <tr>
-    <td>{{dockerImage.shortId}}</td>
+    <td>{{#link-to 'images.detail' dockerImage}}{{dockerImage.shortId}}{{/link-to}}</td>
     <td>{{dockerImage.repoTags}}</td>
     <td>{{dockerImage.created}}</td>
     <td>{{dockerImage.size}}</td>
