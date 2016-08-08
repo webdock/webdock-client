@@ -4,6 +4,7 @@
     "ember": "~2.7.0",
     "ember-cli-shims": "0.1.1",
     "ember-qunit-notifications": "0.1.0",
-    "normalize-css": "^4.2.0"
+    "normalize-css": "^4.2.0",
+    "toastr": "^2.1.3"
   }
 }
