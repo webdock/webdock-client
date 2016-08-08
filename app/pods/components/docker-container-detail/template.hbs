@@ -7,4 +7,6 @@
   <dd>{{dockerContainer.command}}</dd>
   <dt>Id</dt>
   <dd>{{dockerContainer.id}}</dd>
+  <dt>Image</dt>
+  <dd>{{#link-to 'images.detail' dockerContainer.image}}{{dockerContainer.image.shortId}}{{/link-to}}</dd>
 </dl>
