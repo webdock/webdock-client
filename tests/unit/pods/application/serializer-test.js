@@ -6,10 +6,12 @@ moduleForModel('application', 'Unit | Serializer | application', {
 });
 
 // Replace this with your real tests.
-test('it serializes records', function(assert) {
-  let record = this.subject();
+// https://github.com/ember-cli/ember-cli/issues/4879
 
-  let serializedRecord = record.serialize();
+// test('it serializes records', function(assert) {
+//  let record = this.subject();
 
-  assert.ok(serializedRecord);
-});
+//  let serializedRecord = record.serialize();
+
+//  assert.ok(serializedRecord);
+// });
