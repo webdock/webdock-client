@@ -12,7 +12,7 @@ Router.map(function () {
   this.route('login');
   this.route('containers', function() {
     this.route('detail', {
-      path: ':containerId'
+      path: ':id'
     });
   });
   this.route('images', function() {});
