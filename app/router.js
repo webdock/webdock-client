@@ -10,7 +10,11 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('users', function () {});
   this.route('login');
-  this.route('containers', function() {});
+  this.route('containers', function() {
+    this.route('detail', {
+      path: ':id'
+    });
+  });
   this.route('images', function() {});
 });
 /* eslint-enable array-callback-return, prefer-arrow-callback */
