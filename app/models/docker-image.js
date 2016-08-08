@@ -9,6 +9,7 @@ export default DS.Model.extend({
   size: DS.attr(),
   virtualSize: DS.attr(),
   labels: DS.attr(),
+  containers: DS.hasMany('docker-container'),
 
   shortId: Ember.computed('id', function () {
     return `${this.get('id').substring(0, 12)}`;
