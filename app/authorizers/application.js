@@ -1,4 +1,4 @@
-import OAuth2Bearer from 'ember-simple-auth/authorizers/oauth2-bearer';
+import TokenAuthorizer from 'ember-simple-auth-token/authorizers/token';
 
-export default OAuth2Bearer.extend({
+export default TokenAuthorizer.extend({
 });
