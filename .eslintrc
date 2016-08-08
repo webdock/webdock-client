@@ -9,5 +9,5 @@
     comma-dangle:
       - 2
       - always-multiline
-    import/no-unresolved:
-      - 1
+    import/no-unresolved: 0
+    func-names: 0
