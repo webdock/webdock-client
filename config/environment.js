@@ -1,6 +1,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'webdock',
+    podModulePrefix: 'webdock/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
