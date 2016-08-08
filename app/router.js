@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function () {
-  this.route('users', function() {});
+  this.route('users', function () {});
   this.route('login');
 });
 
