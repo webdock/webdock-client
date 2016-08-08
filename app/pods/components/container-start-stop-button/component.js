@@ -1,14 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  store: Ember.inject.service(),
+
   dockerContainer: null,
 
   updateModel(response) {
     if (Ember.isEmpty(response)) {
-      console.log("Nothing changed");
       return;
     }
     console.log(response);
+    this.get('store').pushPayload(response);
   },
 
   handleError(error) {
@@ -17,8 +19,8 @@ export default Ember.Component.extend({
 
   changeStatus(action) {
     this.get('dockerContainer')[action]()
-      .then(this.updateModel)
-      .catch(this.handleError)
+      .then(response => this.updateModel(response))
+      .catch(error => this.handleError(error));
   },
 
   actions: {
