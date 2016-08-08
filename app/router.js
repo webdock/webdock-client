@@ -17,7 +17,7 @@ Router.map(function () {
   });
   this.route('images', function() {
     this.route('detail', {
-      path: ':imageId'
+      path: ':id'
     });
   });
 });
