@@ -1,1 +1,16 @@
-{{yield}}
+<dl>
+  <dt>Repository</dt>
+  <dd>{{dockerImage.repoTags}}</dd>
+  <dt>Created</dt>
+  <dd>{{dockerImage.created}}</dd>
+  <dt>Size</dt>
+  <dd>{{dockerImage.size}}</dd>
+  <dt>Virtual Size</dt>
+  <dd>{{dockerImage.virtualSize}}</dd>
+  {{#if dockerImage.parentId}}
+    <dt>Parent Id</dt>
+    <dd>{{dockerImage.parentId}}</dd>
+  {{/if}}
+  <dt>Id</dt>
+  <dd>{{dockerImage.id}}</dd>
+</dl>
