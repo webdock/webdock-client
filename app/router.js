@@ -15,7 +15,11 @@ Router.map(function () {
       path: ':id'
     });
   });
-  this.route('images', function() {});
+  this.route('images', function() {
+    this.route('detail', {
+      path: ':id'
+    });
+  });
 });
 /* eslint-enable array-callback-return, prefer-arrow-callback */
 
