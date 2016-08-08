@@ -8,6 +8,8 @@ module.exports = function(defaults) {
     sassOptions: {
       extension: 'sass',
     },
+
+    hinting: process.env.EMBER_ENV != 'test',
   });
 
   app.import('bower_components/normalize-css/normalize.css');
