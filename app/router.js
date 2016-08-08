@@ -10,6 +10,7 @@ const Router = Ember.Router.extend({
 Router.map(function () {
   this.route('users', function () {});
   this.route('login');
+  this.route('containers', function() {});
 });
 /* eslint-enable array-callback-return, prefer-arrow-callback */
 

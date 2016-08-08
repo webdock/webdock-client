@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Command</th>
+  </tr>
+  {{#each dockerContainers as |dockerContainer|}}
+  <tr>
+    <td>{{dockerContainer.shortId}}</td>
+    <td>{{dockerContainer.name}}</td>
+    <td>{{dockerContainer.status}}</td>
+    <td>{{dockerContainer.command}}</td>
+  </tr>
+  {{/each}}
+</table>

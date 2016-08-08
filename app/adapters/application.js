@@ -6,4 +6,7 @@ import config from 'webdock/config/environment';
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   host: config.apiEndpoint,
   authorizer: 'authorizer:application',
+  pathForType: function(modelName) {
+    return this._super(modelName).replace(/^docker-/, '');
+  },
 });
