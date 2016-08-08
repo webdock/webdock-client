@@ -11,7 +11,10 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{docker-container-list}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), `Id
+    Name
+    Status
+    Command`);
 
   // Template block usage:
   this.render(hbs`
@@ -20,5 +23,8 @@ test('it renders', function(assert) {
     {{/docker-container-list}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), `Id
+    Name
+    Status
+    Command`);
 });
