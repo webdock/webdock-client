@@ -7,13 +7,17 @@ table
   th
     text-align: left
 
+  td, th
+    padding: 3px 8px
+
 .btn, button
   color: white
   background-color: black
-  padding: 9px 22px
+  padding: 10px 22px 8px
   border: none
   cursor: pointer
   transition: background-color ease .1s
+  outline: none
 
   &:hover
     background-color: lighten(black, 33%)
@@ -21,14 +25,22 @@ table
   &:active
     background-color: black
 
+  &.wide
+    width: 100%
+
 input[type='text'], input[type='password']
   border: none
   border-bottom: 1px solid black
   padding: 4px 10px
   margin: 5px 0px
+  outline: none
+  background: transparent
 
 .pull-right
   float: right
+
+.text-center
+  text-align: center
 
 .main
   width: 800px
@@ -75,3 +87,13 @@ input[type='text'], input[type='password']
 
         &:hover:after, &.active:after
           width: 100%
+
+.layout-centered
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: flex
+  align-items: center
+  justify-content: center
