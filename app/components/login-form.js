@@ -9,7 +9,9 @@ export default Ember.Component.extend({
   actions: {
     authenticate() {
       const credentials = this.getProperties('identification', 'password');
-      this.get('session').authenticate('authenticator:token', credentials);
+      const result = this.get('session').authenticate('authenticator:token', credentials);
+      result.catch(err => this.set('errorMessage', err.message || err));
+      result.then(() => this.set('errorMessage', undefined));
     },
   },
 });
