@@ -21,3 +21,6 @@ testem.log
 
 # vim plugin stuff
 .ctrlp
+
+# webstorm
+.idea/
