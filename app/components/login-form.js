@@ -1,13 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  email: '',
+  session: Ember.inject.service('session'),
+
+  identification: '',
   password: '',
 
   actions: {
     authenticate() {
-      const props = this.getProperties('email', 'password');
-      console.log(props);
+      const credentials = this.getProperties('identification', 'password');
+      this.get('session').authenticate('authenticator:token', credentials);
     },
   },
 });
