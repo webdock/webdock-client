@@ -7,7 +7,7 @@
   </tr>
   {{#each dockerContainers as |dockerContainer|}}
   <tr>
-    <td>{{dockerContainer.shortId}}</td>
+    <td>{{#link-to 'containers.detail' dockerContainer}}{{dockerContainer.shortId}}{{/link-to}}</td>
     <td>{{dockerContainer.name}}</td>
     <td>{{dockerContainer.status}}</td>
     <td>{{dockerContainer.command}}</td>
