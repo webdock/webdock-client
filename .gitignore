@@ -15,3 +15,12 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
+
+# swap files
+*.swp
+
+# vim plugin stuff
+.ctrlp
+
+# webstorm
+.idea/
