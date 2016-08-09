@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
-import config from '../../config/environment';
+import config from 'webdock/config/environment';
 
 export default Ember.Route.extend(ApplicationRouteMixin, {
   i18n: Ember.inject.service(),
@@ -13,7 +13,8 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   determineLocale() {
     const defaultLocale = config.i18n.defaultLocale;
     const locales = this.get('i18n.locales');
-    const locale = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage || defaultLocale;
+    const locale = navigator.languages ? navigator.languages[0] : navigator.language || navigator.userLanguage
+        || defaultLocale;
 
     if (locales.contains(locale)) {
       return locale;

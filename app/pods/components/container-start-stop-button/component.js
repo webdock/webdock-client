@@ -36,5 +36,5 @@ export default Ember.Component.extend({
       const name = this.get('dockerContainer.name');
       this.changeStatus('stop', `Container ${name} stopped!`, `Container ${name} was not running!`);
     },
-  }
+  },
 });
