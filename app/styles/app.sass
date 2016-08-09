@@ -5,6 +5,8 @@ body
 
 table
   margin: 0 -8px
+  width: 100%
+  max-width: 100%
 
   th
     text-align: left
@@ -55,8 +57,11 @@ input[type='text'], input[type='password']
 .text-center
   text-align: center
 
-.main
-  width: 800px
+$container-width: 1000px
+
+.main, .nav-bar .inner .nav
+  max-width: $container-width
+  width: 80%
   margin: 0 auto
 
 .nav-bar
@@ -72,34 +77,30 @@ input[type='text'], input[type='password']
     background-color: black
     color: white
 
-    .nav
-      width: 800px
-      margin: 0 auto
+    a
+      display: inline-block
+      position: relative
+      color: white
+      text-decoration: none
+      padding: 12px 12px 10px
+      cursor: pointer
 
-      a
-        display: inline-block
-        position: relative
-        color: white
-        text-decoration: none
-        padding: 12px 12px 10px
-        cursor: pointer
+      &:first-child
+        margin-left: -12px
 
-        &:first-child
-          margin-left: -12px
+      &:after
+        content: ''
+        position: absolute
+        border-top: 2px solid white
+        transition: width ease .3s, left ease .3s
+        width: 0%
+        left: 0
+        right: 0
+        bottom: 0
+        margin: 0 auto
 
-        &:after
-          content: ''
-          position: absolute
-          border-top: 2px solid white
-          transition: width ease .3s, left ease .3s
-          width: 0%
-          left: 0
-          right: 0
-          bottom: 0
-          margin: 0 auto
-
-        &:hover:after, &.active:after
-          width: 100%
+      &:hover:after, &.active:after
+        width: 100%
 
 .layout-centered
   position: fixed
