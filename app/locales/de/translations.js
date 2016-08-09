@@ -56,6 +56,7 @@ export default {
     },
     'index': {
       'containers': 'Container',
+      'search': 'Suche',
     },
   },
   'images': {
