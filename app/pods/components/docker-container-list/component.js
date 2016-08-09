@@ -11,12 +11,13 @@ export default Ember.Component.extend({
       return dockerContainers;
     }
 
+    const lowerFilter = searchFilter.toLowerCase();
     return dockerContainers.filter(container => {
       const { name, id } = container.getProperties('name', 'id');
-      if (name.toLowerCase().indexOf(searchFilter) !== -1) {
+      if (name.toLowerCase().indexOf(lowerFilter) !== -1) {
         return true;
       }
-      return id.indexOf(searchFilter) !== -1;
+      return id.indexOf(lowerFilter) !== -1;
     });
   }),
 
