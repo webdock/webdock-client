@@ -2,39 +2,40 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
-  toast: Ember.inject.service(),
+  itoast: Ember.inject.service(),
 
   dockerContainer: null,
 
   updateContainer(response, changeMessage, keptMessage) {
-    const toast = this.get('toast');
+    const toast = this.get('itoast');
+    const name = this.get('dockerContainer.name');
     if (Ember.isEmpty(response)) {
-      toast.info(keptMessage);
+      toast.info(keptMessage, { name });
       return;
     }
     this.get('store').pushPayload(response);
-    toast.success(changeMessage);
+    toast.success(changeMessage, { name });
   },
 
   handleError(error) {
-    this.get('toast').error('An error occurred!');
+    this.get('itoast').error('container-start-stop-button.error-message');
   },
 
   changeStatus(action, changeMessage, keptMessage) {
-    this.get('dockerContainer')[action]()
-      .then(response => this.updateContainer(response, changeMessage, keptMessage))
-      .catch(error => this.handleError(error));
+    const promise = this.get('dockerContainer')[action]();
+    promise.then(response => this.updateContainer(response, changeMessage, keptMessage));
+    promise.catch(error => this.handleError(error));
   },
 
   actions: {
     start() {
-      const name = this.get('dockerContainer.name');
-      this.changeStatus('start', `Container ${name} started!`, `Container ${name} was already running!`);
+      this.changeStatus('start', 'container-start-stop-button.start-message',
+                        'container-start-stop-button.already-running-message');
     },
 
     stop() {
-      const name = this.get('dockerContainer.name');
-      this.changeStatus('stop', `Container ${name} stopped!`, `Container ${name} was not running!`);
+      this.changeStatus('stop', 'container-start-stop-button.stop-message',
+                        'container-start-stop-button.not-running-message');
     },
-  }
+  },
 });

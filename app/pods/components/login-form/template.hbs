@@ -2,7 +2,7 @@
   {{#if errorMessage}}
     <p>{{errorMessage}}</p>
   {{/if}}
-  {{input id='identification' placeholder='Email' value=identification}}<br>
-  {{input id='password' placeholder='Password' type='password' value=password}}<br>
-  <button type='submit' class='wide'>Login</button>
+  {{input id='identification' placeholder=(t 'login-form.email') value=identification}}<br>
+  {{input id='password' placeholder=(t 'login-form.password') type='password' value=password}}<br>
+  <button type='submit' class='wide'>{{t 'login-form.login'}}</button>
 </form>

@@ -5,7 +5,7 @@ export default DS.JSONAPISerializer.extend({
     let key = payloadKey;
 
     // TODO extract endpoints into hash set
-    if (payloadKey === 'containers' || payloadKey == 'images') {
+    if (payloadKey === 'containers' || payloadKey === 'images') {
       key = `docker-${payloadKey}`;
     }
 

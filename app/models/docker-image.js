@@ -13,5 +13,5 @@ export default DS.Model.extend({
 
   shortId: Ember.computed('id', function () {
     return `${this.get('id').substring(0, 12)}`;
-  })
+  }),
 });

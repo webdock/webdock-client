@@ -1,16 +1,16 @@
 <dl>
-  <dt>Repository</dt>
+  <dt>{{t 'docker-image-detail.repository'}}</dt>
   <dd>{{dockerImage.repoTags}}</dd>
-  <dt>Created</dt>
+  <dt>{{t 'docker-image-detail.created'}}</dt>
   <dd>{{dockerImage.created}}</dd>
-  <dt>Size</dt>
+  <dt>{{t 'docker-image-detail.size'}}</dt>
   <dd>{{dockerImage.size}}</dd>
-  <dt>Virtual Size</dt>
+  <dt>{{t 'docker-image-detail.virtual-size'}}</dt>
   <dd>{{dockerImage.virtualSize}}</dd>
   {{#if dockerImage.parentId}}
-    <dt>Parent Id</dt>
+    <dt>{{t 'docker-image-detail.parent-id'}}</dt>
     <dd>{{dockerImage.parentId}}</dd>
   {{/if}}
-  <dt>Id</dt>
+  <dt>{{t 'docker-image-detail.id'}}</dt>
   <dd>{{dockerImage.id}}</dd>
 </dl>
