@@ -2,32 +2,29 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   store: Ember.inject.service(),
-  toast: Ember.inject.service(),
-  i18n: Ember.inject.service(),
+  itoast: Ember.inject.service(),
 
   dockerContainer: null,
 
   updateContainer(response, changeMessage, keptMessage) {
-    const i18n = this.get('i18n');
-    const toast = this.get('toast');
+    const toast = this.get('itoast');
     const name = this.get('dockerContainer.name');
     if (Ember.isEmpty(response)) {
-      toast.info(i18n.t(keptMessage, { name: name }));
+      toast.info(keptMessage, { name });
       return;
     }
     this.get('store').pushPayload(response);
-    toast.success(i18n.t(changeMessage, { name: name }));
+    toast.success(changeMessage, { name });
   },
 
   handleError(error) {
-    const i18n = this.get('i18n');
-    this.get('toast').error(i18n.t('container-start-stop-button.error-message'));
+    this.get('itoast').error('container-start-stop-button.error-message');
   },
 
   changeStatus(action, changeMessage, keptMessage) {
-    this.get('dockerContainer')[action]()
-      .then(response => this.updateContainer(response, changeMessage, keptMessage))
-      .catch(error => this.handleError(error));
+    const promise = this.get('dockerContainer')[action]();
+    promise.then(response => this.updateContainer(response, changeMessage, keptMessage));
+    promise.catch(error => this.handleError(error));
   },
 
   actions: {
