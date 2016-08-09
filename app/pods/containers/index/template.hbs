@@ -3,6 +3,6 @@
   {{input class='search-field' type='text' value=searchFilter placeholder=(t 'containers.index.search')}}
 </h2>
 
-{{input type='checkbox' name='showRunning' checked=showRunning}} Show running containers only
+{{input type='checkbox' name='showRunning' checked=showRunning}} {{t 'containers.index.show-running'}}
 
 {{docker-container-list dockerContainers=model searchFilter=searchFilter showRunning=showRunning}}
