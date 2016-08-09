@@ -3,6 +3,11 @@ export default {
   'container-start-stop-button': {
     'start': 'Starten',
     'stop': 'Stoppen',
+    'start-message': 'Container {{name}} gestarted!',
+    'stop-message': 'Container {{name}} gestoppt!',
+    'already-running-message': 'Container {{name}} war bereits gestarted!',
+    'not-running-message': 'Container {{name}} war nicht gestarted!',
+    'error-message': 'Ein Fehler ist aufgetreten!',
   },
   'docker-container-detail': {
     'name': 'Name',
