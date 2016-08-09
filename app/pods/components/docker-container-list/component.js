@@ -3,10 +3,19 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   dockerContainers: [],
   searchFilter: null,
+  showRunning: false,
 
-  filteredContainers: Ember.computed('dockerContainers', 'searchFilter', function () {
-    const searchFilter = this.get('searchFilter');
+  runningContainers: Ember.computed('dockerContainers.@each.isRunning', 'showRunning', function() {
     const dockerContainers = this.get('dockerContainers');
+    if (this.get('showRunning')) {
+      return dockerContainers.filterBy('isRunning', true);
+    }
+    return dockerContainers;
+  }),
+
+  filteredContainers: Ember.computed('runningContainers.@each.{name,id}', 'searchFilter', function () {
+    const searchFilter = this.get('searchFilter');
+    const dockerContainers = this.get('runningContainers');
     if (Ember.isEmpty(searchFilter)) {
       return dockerContainers;
     }
