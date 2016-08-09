@@ -1,3 +1,3 @@
 <h2>Container {{model.shortId}}</h2>
 
-{{docker-container-detail dockerContainer=model}}
+{{docker-container-detail dockerContainer=model onRemove=(action 'onRemove')}}

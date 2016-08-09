@@ -5,7 +5,9 @@ export default Ember.Component.extend({
 
   actions: {
     remove() {
-      this.get('dockerContainer').destroyRecord();
+      const promise = this.get('dockerContainer').destroyRecord();
+      promise.then(() => this.get('onRemove')());
+      promise.catch(err => console.log(err));
     },
   },
 });
