@@ -49,7 +49,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.apiEndpoint = '/api';
+    ENV['ember-simple-auth-token'].serverTokenEndpoint = ENV.apiEndpoint + '/authenticate';
   }
 
   return ENV;
