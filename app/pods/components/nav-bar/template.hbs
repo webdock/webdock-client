@@ -2,11 +2,11 @@
 <div class='nav-bar'>
   <div class='inner'>
     <div class='nav'>
-      {{#link-to 'index'}}Home{{/link-to}}
-      {{#link-to 'containers'}}Containers{{/link-to}}
-      {{#link-to 'images'}}Images{{/link-to}}
-      {{#link-to 'users'}}Users{{/link-to}}
-      <a class='pull-right' {{action 'invalidateSession'}}>Logout</a>
+      {{#link-to 'index'}}{{t 'nav-bar.home'}}{{/link-to}}
+      {{#link-to 'containers'}}{{t 'nav-bar.containers'}}{{/link-to}}
+      {{#link-to 'images'}}{{t 'nav-bar.images'}}{{/link-to}}
+      {{#link-to 'users'}}{{t 'nav-bar.users'}}{{/link-to}}
+      <a class='pull-right' {{action 'invalidateSession'}}>{{t 'nav-bar.logout'}}</a>
     </div>
   </div>
 </div>
