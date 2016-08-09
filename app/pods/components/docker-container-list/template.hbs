@@ -7,7 +7,7 @@
     <th>{{t 'docker-container-list.image'}}</th>
     <th></th>
   </tr>
-  {{#each dockerContainers as |dockerContainer|}}
+  {{#each sortedContainers as |dockerContainer|}}
   <tr>
     <td>{{#link-to 'containers.detail' dockerContainer}}{{dockerContainer.shortId}}{{/link-to}}</td>
     <td>{{dockerContainer.name}}</td>
