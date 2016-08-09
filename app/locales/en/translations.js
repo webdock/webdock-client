@@ -57,6 +57,7 @@ export default {
     'index': {
       'containers': 'Containers',
       'search': 'Search',
+      'show-running': 'Show running containers only',
     },
   },
   'images': {
