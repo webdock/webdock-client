@@ -20,8 +20,12 @@ module.exports = function(environment) {
     apiEndpoint: 'http://127.0.0.1:3000/api',
   };
 
+  ENV['i18n'] = {
+    defaultLocale: 'en',
+  };
+
   ENV['ember-simple-auth'] = {
-    authorizer: 'authorizer:token'
+    authorizer: 'authorizer:token',
   };
 
   ENV['ember-simple-auth-token'] = {
