@@ -9,8 +9,8 @@ export default DS.Model.extend({
   command: DS.attr(),
   ports: DS.attr(),
 
-  start: memberAction({path: 'start', type: 'post'}),
-  stop: memberAction({path: 'stop', type: 'post'}),
+  start: memberAction({ path: 'start', type: 'post' }),
+  stop: memberAction({ path: 'stop', type: 'post' }),
 
   shortId: Ember.computed('id', function () {
     return this.get('id').substring(0, 12);
