@@ -1,4 +1,5 @@
 import DS from 'ember-data';
+import { memberAction } from 'ember-api-actions';
 
 export default DS.Model.extend({
   name: DS.attr(),
@@ -8,7 +9,14 @@ export default DS.Model.extend({
   command: DS.attr(),
   ports: DS.attr(),
 
+  start: memberAction({ path: 'start', type: 'post' }),
+  stop: memberAction({ path: 'stop', type: 'post' }),
+
   shortId: Ember.computed('id', function () {
     return this.get('id').substring(0, 12);
+  }),
+
+  isRunning: Ember.computed('status', function () {
+    return this.get('status') === 'running';
   }),
 });

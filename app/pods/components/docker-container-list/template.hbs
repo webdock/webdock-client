@@ -5,6 +5,7 @@
     <th>Status</th>
     <th>Command</th>
     <th>Image</th>
+    <th></th>
   </tr>
   {{#each dockerContainers as |dockerContainer|}}
   <tr>
@@ -13,6 +14,7 @@
     <td>{{dockerContainer.status}}</td>
     <td>{{dockerContainer.command}}</td>
     <td>{{#link-to 'images.detail' dockerContainer.image}}{{dockerContainer.image.shortId}}{{/link-to}}</td>
+    <td>{{container-start-stop-button dockerContainer=dockerContainer}}</td>
   </tr>
   {{/each}}
 </table>
