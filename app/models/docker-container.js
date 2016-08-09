@@ -17,7 +17,5 @@ export default DS.Model.extend({
     return this.get('id').substring(0, 12);
   }),
 
-  isRunning: Ember.computed('status', function () {
-    return this.get('status') === 'running';
-  }),
+  isRunning: Ember.computed.equal('status', 'running'),
 });

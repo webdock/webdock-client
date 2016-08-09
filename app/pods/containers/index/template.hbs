@@ -1,3 +1,4 @@
 <h2>{{t 'containers.index.containers'}}</h2>
+{{input type=text value=searchFilter placeholder=(t 'containers.index.search')}}
 
-{{docker-container-list dockerContainers=model}}
+{{docker-container-list dockerContainers=model searchFilter=searchFilter}}
