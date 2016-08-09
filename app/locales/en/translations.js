@@ -1,4 +1,5 @@
 export default {
+  // components
   'container-start-stop-button': {
     'start': 'Start',
     'stop': 'Stop',
@@ -42,5 +43,28 @@ export default {
     'images': 'Images',
     'users': 'Users',
     'logout': 'Logout',
-  }
+  },
+  // routes
+  'containers': {
+    'detail': {
+      'container': 'Container',
+    },
+    'index': {
+      'containers': 'Containers',
+    },
+  },
+  'images': {
+    'detail': {
+      'image': 'Image',
+    },
+    'index': {
+      'images': 'Images',
+    },
+  },
+  'users': {
+    'index': {
+      'users': 'Users',
+      'email': 'Email',
+    },
+  },
 };
